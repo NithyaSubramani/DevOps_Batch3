@@ -1,0 +1,30 @@
+$wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+$sudo vi /etc/apt/sources.list
+In this file go to the bottom and add the below line
+
+deb https://pkg.jenkins.io/debian-stable binary/
+
+after inserting the line come out by using [ESC] :wq on vi
+
+$sudo apt-get update
+$sudo apt-get install jenkins
+
+
+Download TeamCity latest version from Jetbrains website. The tar.gz file will be downloaded in
+/home/ubuntu/Downloads
+
+In your console
+$cd /home/ubuntu/Downloads
+$tar xvzf TeamCity-2019.1.4.tar.gz
+$cd /opt
+$sudo mkdir JetBrains
+$cd /home/ubuntu/Downloads
+$sudo mv TeamCity /opt/JetBrains/TeamCity
+$cd /opt/JetBrains
+$sudo chmod -R 777 TeamCity
+$cd TeamCity/bin
+$./teamcity-server.sh start
+
+From browser go to localhost:8111
+Follow on screen guidelines.
+
